@@ -2,7 +2,7 @@
   "name": "virtual-pet",
   "version": "1.0.0",
   "description": "Programming Fundamentals - OOP Virtual Pet",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "jest"
   },
