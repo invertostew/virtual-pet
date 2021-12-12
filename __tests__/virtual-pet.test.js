@@ -98,18 +98,18 @@ describe('feed', () => {
 describe('checkUp', () => {
     test('Return "I need a walk" if fitness is 3 or less', () => {
         fido.fitness = 3;
-        expect(fido.checkUp).toEqual('I need a walk');
+        expect(fido.checkUp()).toEqual('I need a walk');
     });
     test('Return "I am hungry" if hunger is 5 or more', () => {
         fido.hunger = 5;
-        expect(fido.checkUp).toEqual('I am hungry');
+        expect(fido.checkUp()).toEqual('I am hungry');
     });
     test('Return "I am hungry AND I need a walk" if hunger is 5 or more AND fitness is 3 or less', () => {
         fido.fitness = 3;
         fido.hunger = 5;
-        expect(fido.checkUp).toEqual('I am hungry AND I need a walk');
+        expect(fido.checkUp()).toEqual('I am hungry AND I need a walk');
     });
     test('Return "I feel great!" if none of the above are true', () => {
-        expect(fido.checkUp).toEqual('I feel great!');
+        expect(fido.checkUp()).toEqual('I feel great!');
     });
 });
