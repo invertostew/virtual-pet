@@ -57,3 +57,11 @@ describe('growUp', () => {
         expect(fido.fitness).toBe(4);
     });
 });
+
+describe('walk', () => {
+    test('walk increases the fitness property by 4', () => {
+        expect(fido.fitness).toBe(10);
+        fido.walk();
+        expect(fido.fitness).toBe(10);
+    });
+});
