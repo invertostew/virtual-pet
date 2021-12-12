@@ -7,6 +7,8 @@ describe('Pet', () => {
     });
     test('Returns the pets name', () => {
         const fido = new Pet('Fido');
+        const bronson = new Pet('Bronson');
         expect(fido.name).toEqual('Fido');
+        expect(bronson.name).toEqual('Bronson');
     });
 });
