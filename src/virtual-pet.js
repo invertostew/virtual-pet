@@ -1,10 +1,22 @@
 'use strict';
 
 function Pet(name) {
+    let isAlive = true;
+
     this.name = name;
     this.age = 0;
     this.hunger = 0;
     this.fitness = 10;
+
+    Object.defineProperty(this, 'isAlive', {
+        get: function () {
+            return isAlive;
+        },
+        set: function (pet) {
+            if (pet.fitness <= 0 || pet.hunger >= 10 || pet.age >= 30) isAlive = false;
+            else isAlive = true;
+        }
+    });
 }
 
 Pet.prototype.growUp = function () {
