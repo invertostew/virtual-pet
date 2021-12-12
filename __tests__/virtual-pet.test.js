@@ -59,9 +59,18 @@ describe('growUp', () => {
 });
 
 describe('walk', () => {
-    test('walk increases the fitness property by 4', () => {
+    test('fitness property can not go above 10', () => {
         expect(fido.fitness).toBe(10);
         fido.walk();
         expect(fido.fitness).toBe(10);
+    });
+    test('walk increases the fitness property by 4', () => {
+        fido.fitness = 5;
+        fido.walk();
+        expect(fido.fitness).toBe(9);
+        
+        bronson.fitness = 2;
+        bronson.walk();
+        expect(bronson.fitness).toBe(6);
     });
 });
