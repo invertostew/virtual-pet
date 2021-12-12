@@ -113,3 +113,21 @@ describe('checkUp', () => {
         expect(fido.checkUp()).toEqual('I feel great!');
     });
 });
+
+describe('isAlive', () => {
+    test('Return false if fitness is 0 or less', () => {
+        fido.fitness = 0;
+        expect(fido.isAlive()).toBe(false);
+    });
+    test('Return false if hunger is 10 or more', () => {
+        fido.hunger = 10;
+        expect(fido.isAlive()).toBe(false);
+    });
+    test('Return false if age is 30 or more', () => {
+        fido.age = 30;
+        expect(fido.isAlive()).toBe(false);
+    });
+    test('Return true if none of the above are true', () => {
+        expect(fido.isAlive()).toBe(true);
+    });
+});
