@@ -63,14 +63,34 @@ describe('walk', () => {
         expect(fido.fitness).toBe(10);
         fido.walk();
         expect(fido.fitness).toBe(10);
+
+        bronson.fitness = 9;
+        bronson.walk();
+        expect(bronson.fitness).toBe(10);
     });
     test('walk increases the fitness property by 4', () => {
         fido.fitness = 5;
         fido.walk();
         expect(fido.fitness).toBe(9);
-        
+
         bronson.fitness = 2;
         bronson.walk();
         expect(bronson.fitness).toBe(6);
+    });
+});
+
+describe('feed', () => {
+    test('hunger property can not go below 0', () => {
+        fido.hunger = 2;
+        fido.feed();
+        expect(fido.hunger).toBe(0);
+    });
+    test('feed decreases the hunger property by 3', () => {
+        bronson.growUp();
+        bronson.feed();
+        expect(bronson.hunger).toBe(2);
+        bronson.growUp();
+        bronson.feed();
+        expect(bronson.hunger).toBe(4);
     });
 });
