@@ -29,4 +29,13 @@ describe('growUp', () => {
         fido.growUp();
         expect(fido.age).toBe(2);
     });
+    test('Returns the initial hunger (should be 0)', () => {
+        expect(fido.hunger).toBe(0);
+        expect(bronson.hunger).toBe(0);
+    });
+
+    test('Returns the initial fitness (should be 10)', () => {
+        expect(fido.fitness).toBe(10);
+        expect(bronson.fitness).toBe(10);
+    });
 });
