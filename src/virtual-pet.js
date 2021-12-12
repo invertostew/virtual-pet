@@ -14,19 +14,11 @@ Pet.prototype.growUp = function () {
 }
 
 Pet.prototype.walk = function () {
-    if (this.fitness + 4 > 10) {
-        this.fitness = 10;
-    } else {
-        this.fitness += 4;
-    }
+    this.fitness + 4 > 10 ? this.fitness = 10 : this.fitness += 4;
 }
 
 Pet.prototype.feed = function () {
-    if (this.hunger - 3 < 0) {
-        this.hunger = 0;
-    } else {
-        this.hunger -= 3;
-    }
+    this.hunger - 3 < 0 ? this.hunger = 0 : this.hunger -= 3;
 }
 
 // export Pet constructor for outside usage
