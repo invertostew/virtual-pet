@@ -20,7 +20,10 @@ This program allows you to create a virtual pet, be sure to look after it!
 ### Hard Requirements
 * [Node JS](https://nodejs.org/en/) - to run the program as per the [instructions](#getting-started)
 
-### Development Requirements
+### Application Dependencies
+Currently none.
+
+### Development Dependencies
 * [Jest](https://jestjs.io/) - run `npm install` to install it as a development dependency.
 
 ## Getting Started
