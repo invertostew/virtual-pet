@@ -10,11 +10,15 @@ beforeEach(() => {
 
 describe('Pet', () => {
     test('Returns an instance of Pet', () => {
-        expect(new Pet('Fido')).toBeInstanceOf(Pet);
+        expect(fido).toBeInstanceOf(Pet);
     });
     test('Returns the pets name', () => {
         expect(fido.name).toBe('Fido');
         expect(bronson.name).toBe('Bronson');
+    });
+    test('Pet should have an empty children array', () => {
+        expect(Array.isArray(fido.children)).toBe(true);
+        expect(fido.children).toEqual([]);
     });
 });
 
@@ -161,5 +165,18 @@ describe('isAlive', () => {
     });
     test('Return true if none of the above are true', () => {
         expect(fido.isAlive).toBe(true);
+    });
+});
+
+describe('BabyPet', () => {
+    const fidoJr = new BabyPet(fido, 'Fido Jr');
+    const bronsonJr = new BabyPet(bronson, 'Bronson Jr');
+
+    test('Returns an instance of BabyPet', () => {
+        expect(fidoJr).toBeInstanceOf(BabyPet);
+    });
+    test('Returns the pets name', () => {
+        expect(fidoJr.name).toBe('Fido Jr');
+        expect(bronsonJr.name).toBe('Bronson Jr');
     });
 });
