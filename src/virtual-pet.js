@@ -42,7 +42,7 @@ Pet.prototype.feed = function () {
 
 Pet.prototype.checkUp = function () {
     if (!this.isAlive) return ERROR_MESSAGE;
-    if (this.hunger >= HUNGER_THRESHOLD && this.fitness <= FITNESS_THRESHOLD) return 'I am hungry AND I need a walk';
+    else if (this.hunger >= HUNGER_THRESHOLD && this.fitness <= FITNESS_THRESHOLD) return 'I am hungry AND I need a walk';
     else if (this.fitness <= FITNESS_THRESHOLD) return 'I need a walk';
     else if (this.hunger >= HUNGER_THRESHOLD) return 'I am hungry';
     return 'I feel great!';
