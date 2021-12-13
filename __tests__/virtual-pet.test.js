@@ -185,14 +185,17 @@ describe('isAlive', () => {
 });
 
 describe('BabyPet', () => {
-    const fidoJr = new BabyPet(fido, 'Fido Jr');
-    const bronsonJr = new BabyPet(bronson, 'Bronson Jr');
+    beforeEach(() => {
+        fido.haveBaby('Fido Jr');
+        fido.haveBaby('Odif');
+    });
 
     test('Returns an instance of BabyPet', () => {
-        expect(fidoJr).toBeInstanceOf(BabyPet);
+        expect(fido.children[0]).toBeInstanceOf(BabyPet);
+        expect(fido.children[1]).toBeInstanceOf(BabyPet);
     });
     test('Returns the baby pets name', () => {
-        expect(fidoJr.name).toBe('Fido Jr');
-        expect(bronsonJr.name).toBe('Bronson Jr');
+        expect(fido.children[0].name).toBe('Fido Jr');
+        expect(fido.children[1].name).toBe('Odif');
     });
 });

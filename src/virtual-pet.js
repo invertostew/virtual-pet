@@ -50,8 +50,9 @@ Pet.prototype.checkUp = function () {
 }
 
 Pet.prototype.haveBaby = function (name) {
-    this.children.push(new BabyPet(this, name));
-    return `${this.name} just had a baby!`;
+    const babyPet = new BabyPet(this, name);
+    this.children.push(babyPet);
+    return this.children.findIndex(baby => baby === babyPet);
 }
 
 function BabyPet(parent, name) {
