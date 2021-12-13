@@ -5,7 +5,7 @@ let fido, bronson;
 beforeEach(() => {
     fido = new Pet('Fido');
     bronson = new Pet('Bronson');
-})
+});
 
 describe('Pet', () => {
     test('Returns an instance of Pet', () => {
