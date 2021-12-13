@@ -1,4 +1,4 @@
-// require Pet constructor function
+// require Pet/BabyPet constructor functions
 const {
     Pet,
     BabyPet

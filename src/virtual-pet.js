@@ -68,7 +68,7 @@ BabyPet.prototype.findParent = function () {
     return `My parent is ${this.parent.name}!`;
 }
 
-// export Pet constructor for outside usage
+// export Pet/BabyPet constructors for outside usage
 module.exports = {
     Pet,
     BabyPet
