@@ -34,6 +34,7 @@ This program allows you to create a virtual pet, be sure to look after it!
     * `walk()`
     * `feed()`
     * `checkUp()`
+    * `haveBaby(<babyName>)`
 
 ## Testing
 This program was built using TDD. More specifically, using red/green refactoring with [Jest](https://jestjs.io/).
