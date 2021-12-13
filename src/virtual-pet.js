@@ -64,6 +64,10 @@ function BabyPet(parent, name) {
 BabyPet.prototype = Object.create(Pet.prototype);
 BabyPet.prototype.constructor = BabyPet;
 
+BabyPet.prototype.findParent = function () {
+    return `My parent is ${this.parent.name}!`;
+}
+
 // export Pet constructor for outside usage
 module.exports = {
     Pet,
