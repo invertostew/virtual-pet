@@ -58,10 +58,12 @@ describe('growUp', () => {
     });
 
     // guard clauses
-    test('growUp should return "Your pet is no longer alive :("', () => {
+    test('growUp should throw error "Your pet is no longer alive :("', () => {
         fido.age = 30;
         expect(fido.isAlive).toBe(false);
-        expect(fido.growUp()).toThrow('Your pet is no longer alive :(');
+        expect(() => {
+            fido.growUp();
+        }).toThrowError(new Error('Your pet is no longer alive :('));
     });
 });
 
@@ -84,6 +86,15 @@ describe('walk', () => {
         bronson.walk();
         expect(bronson.fitness).toBe(6);
     });
+
+    // guard clauses
+    test('walk should throw error "Your pet is no longer alive :("', () => {
+        fido.age = 30;
+        expect(fido.isAlive).toBe(false);
+        expect(() => {
+            fido.walk();
+        }).toThrowError(new Error('Your pet is no longer alive :('));
+    });
 });
 
 describe('feed', () => {
@@ -99,6 +110,15 @@ describe('feed', () => {
         bronson.growUp();
         bronson.feed();
         expect(bronson.hunger).toBe(4);
+    });
+
+    // guard clauses
+    test('feed should throw error "Your pet is no longer alive :("', () => {
+        fido.age = 30;
+        expect(fido.isAlive).toBe(false);
+        expect(() => {
+            fido.feed();
+        }).toThrowError(new Error('Your pet is no longer alive :('));
     });
 });
 
