@@ -1,6 +1,7 @@
 // require Pet constructor function
 const Pet = require('../src/virtual-pet.js');
 
+const ERROR_MESSAGE = 'Your pet is no longer alive :(';
 let fido, bronson;
 beforeEach(() => {
     fido = new Pet('Fido');
@@ -63,7 +64,7 @@ describe('growUp', () => {
         expect(fido.isAlive).toBe(false);
         expect(() => {
             fido.growUp();
-        }).toThrowError(new Error('Your pet is no longer alive :('));
+        }).toThrowError(new Error(ERROR_MESSAGE));
     });
 });
 
@@ -93,7 +94,7 @@ describe('walk', () => {
         expect(fido.isAlive).toBe(false);
         expect(() => {
             fido.walk();
-        }).toThrowError(new Error('Your pet is no longer alive :('));
+        }).toThrowError(new Error(ERROR_MESSAGE));
     });
 });
 
@@ -118,7 +119,7 @@ describe('feed', () => {
         expect(fido.isAlive).toBe(false);
         expect(() => {
             fido.feed();
-        }).toThrowError(new Error('Your pet is no longer alive :('));
+        }).toThrowError(new Error(ERROR_MESSAGE));
     });
 });
 
@@ -141,7 +142,7 @@ describe('checkUp', () => {
     });
     test('Return "Your pet is no longer alive :(" if isAlive is false', () => {
         fido.age = 30;
-        expect(fido.checkUp()).toEqual('Your pet is no longer alive :(');
+        expect(fido.checkUp()).toEqual(ERROR_MESSAGE);
     });
 });
 
