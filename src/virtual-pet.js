@@ -15,6 +15,7 @@ function Pet(name) {
     this.age = MINIMUM_AGE;
     this.hunger = MINIMUM_HUNGER;
     this.fitness = MAXIMUM_FITNESS;
+    this.children = [];
 
     Object.defineProperty(this, 'isAlive', {
         get: function () {
@@ -48,5 +49,17 @@ Pet.prototype.checkUp = function () {
     return 'I feel great!';
 }
 
+function BabyPet(parent, name) {
+    Pet.call(this, name);
+
+    this.parent = parent;
+}
+
+BabyPet.prototype = Object.create(Pet.prototype);
+BabyPet.prototype.constructor = BabyPet;
+
 // export Pet constructor for outside usage
-module.exports = Pet;
+module.exports = {
+    Pet,
+    BabyPet
+};

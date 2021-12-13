@@ -1,5 +1,8 @@
 // require Pet constructor function
-const Pet = require('../src/virtual-pet.js');
+const {
+    Pet,
+    BabyPet
+} = require('../src/virtual-pet.js');
 
 const ERROR_MESSAGE = 'Your pet is no longer alive :(';
 let fido, bronson;
@@ -175,7 +178,7 @@ describe('BabyPet', () => {
     test('Returns an instance of BabyPet', () => {
         expect(fidoJr).toBeInstanceOf(BabyPet);
     });
-    test('Returns the pets name', () => {
+    test('Returns the baby pets name', () => {
         expect(fidoJr.name).toBe('Fido Jr');
         expect(bronsonJr.name).toBe('Bronson Jr');
     });
