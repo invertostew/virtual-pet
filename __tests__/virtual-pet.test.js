@@ -199,3 +199,19 @@ describe('BabyPet', () => {
         expect(fido.children[1].name).toBe('Odif');
     });
 });
+
+describe('findParent', () => {
+    beforeEach(() => {
+        fido.haveBaby('Fido Jr');
+        fido.haveBaby('Odif');
+        bronson.haveBaby('Bronson Jr');
+        bronson.haveBaby('Nosnorb');
+    });
+
+    test('BabyPet can find its parent', () => {
+        expect(fido.children[0].findParent()).toEqual('My parent is Fido!');
+        expect(fido.children[1].findParent()).toEqual('My parent is Fido!');
+        expect(bronson.children[0].findParent()).toEqual('My parent is Bronson!');
+        expect(bronson.children[1].findParent()).toEqual('My parent is Bronson!');
+    });
+});
