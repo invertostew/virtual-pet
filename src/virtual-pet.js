@@ -5,12 +5,12 @@ function Pet(name) {
     this.age = 0;
     this.hunger = 0;
     this.fitness = 10;
-}
 
-Pet.prototype = {
-    get isAlive() {
-        return this.age < 30 && this.hunger < 10 && this.fitness > 0;
-    }
+    Object.defineProperty(this, 'isAlive', {
+        get: function () {
+            return this.age < 30 && this.hunger < 10 && this.fitness > 0;
+        }
+    });
 }
 
 Pet.prototype.growUp = function () {
