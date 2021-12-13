@@ -49,6 +49,11 @@ Pet.prototype.checkUp = function () {
     return 'I feel great!';
 }
 
+Pet.prototype.haveBaby = function (name) {
+    this.children.push(new BabyPet(this, name));
+    return `${this.name} just had a baby!`;
+}
+
 function BabyPet(parent, name) {
     Pet.call(this, name);
 

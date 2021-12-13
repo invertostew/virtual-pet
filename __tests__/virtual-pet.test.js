@@ -23,6 +23,19 @@ describe('Pet', () => {
         expect(Array.isArray(fido.children)).toBe(true);
         expect(fido.children).toEqual([]);
     });
+    test('Pet should be able to have children', () => {
+        fido.haveBaby('Fido Jr');
+        expect(fido.children).toEqual([
+            {
+                name: 'Fido Jr',
+                age: 0,
+                hunger: 0,
+                fitness: 10,
+                children: [],
+                parent: fido
+            }
+        ]);
+    });
 });
 
 describe('growUp', () => {
