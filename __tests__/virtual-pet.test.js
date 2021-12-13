@@ -59,7 +59,7 @@ describe('growUp', () => {
     });
 
     // guard clauses
-    test('growUp should throw error "Your pet is no longer alive :("', () => {
+    test(`growUp should throw error: "${ERROR_MESSAGE}"`, () => {
         fido.age = 30;
         expect(fido.isAlive).toBe(false);
         expect(() => {
@@ -89,7 +89,7 @@ describe('walk', () => {
     });
 
     // guard clauses
-    test('walk should throw error "Your pet is no longer alive :("', () => {
+    test(`walk should throw error: "${ERROR_MESSAGE}"`, () => {
         fido.age = 30;
         expect(fido.isAlive).toBe(false);
         expect(() => {
@@ -114,7 +114,7 @@ describe('feed', () => {
     });
 
     // guard clauses
-    test('feed should throw error "Your pet is no longer alive :("', () => {
+    test(`feed should throw error: "${ERROR_MESSAGE}"`, () => {
         fido.age = 30;
         expect(fido.isAlive).toBe(false);
         expect(() => {
@@ -140,7 +140,7 @@ describe('checkUp', () => {
     test('Return "I feel great!" if none of the above are true', () => {
         expect(fido.checkUp()).toEqual('I feel great!');
     });
-    test('Return "Your pet is no longer alive :(" if isAlive is false', () => {
+    test(`Return "${ERROR_MESSAGE}" if isAlive is false`, () => {
         fido.age = 30;
         expect(fido.checkUp()).toEqual(ERROR_MESSAGE);
     });
