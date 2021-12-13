@@ -56,6 +56,13 @@ describe('growUp', () => {
         fido.growUp();
         expect(fido.fitness).toBe(4);
     });
+
+    // guard clauses
+    test('growUp should return "Your pet is no longer alive :("', () => {
+        fido.age = 30;
+        expect(fido.isAlive).toBe(false);
+        expect(fido.growUp()).toThrow('Your pet is no longer alive :(');
+    });
 });
 
 describe('walk', () => {
