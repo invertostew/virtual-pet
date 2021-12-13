@@ -139,6 +139,10 @@ describe('checkUp', () => {
     test('Return "I feel great!" if none of the above are true', () => {
         expect(fido.checkUp()).toEqual('I feel great!');
     });
+    test('Return "Your pet is no longer alive :(" if isAlive is false', () => {
+        fido.age = 30;
+        expect(fido.checkUp()).toEqual('Your pet is no longer alive :(');
+    });
 });
 
 describe('isAlive', () => {
