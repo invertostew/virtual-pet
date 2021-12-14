@@ -18,13 +18,13 @@ This program allows you to create a virtual pet, be sure to look after it!
 ## Requirements
 
 ### Hard Requirements
-* [Node JS](https://nodejs.org/en/) - to run the program as per the [instructions](#getting-started)
+* [Node JS](https://nodejs.org/en/) - to run the program as per the [instructions](#getting-started).
 
 ### Application Dependencies
 Currently none.
 
 ### Development Dependencies
-* [Jest](https://jestjs.io/) - run `npm install` to install it as a development dependency.
+* [Jest](https://jestjs.io/) - used for unit testing.
 
 ## Getting Started
 1. Open up your terminal and clone the repository onto your local machine using `git clone`, or fork it if you wish and then run `git clone`.

@@ -1,11 +1,10 @@
-// require Pet/BabyPet constructor functions
 const {
     Pet,
     BabyPet
 } = require('../src/virtual-pet.js');
 
 const ERROR_MESSAGE = 'Your pet is no longer alive :(';
-let fido, bronson;
+
 beforeEach(() => {
     fido = new Pet('Fido');
     bronson = new Pet('Bronson');
@@ -39,7 +38,6 @@ describe('Pet', () => {
 });
 
 describe('growUp', () => {
-    // age
     test('Returns the initial age (should be 0)', () => {
         expect(fido.age).toBe(0);
         expect(bronson.age).toBe(0);
@@ -51,8 +49,6 @@ describe('growUp', () => {
         fido.growUp();
         expect(fido.age).toBe(2);
     });
-
-    // hunger
     test('Returns the initial hunger (should be 0)', () => {
         expect(fido.hunger).toBe(0);
         expect(bronson.hunger).toBe(0);
@@ -64,8 +60,6 @@ describe('growUp', () => {
         fido.growUp();
         expect(fido.hunger).toBe(10);
     });
-
-    // fitness
     test('Returns the initial fitness (should be 10)', () => {
         expect(fido.fitness).toBe(10);
         expect(bronson.fitness).toBe(10);
@@ -77,8 +71,6 @@ describe('growUp', () => {
         fido.growUp();
         expect(fido.fitness).toBe(4);
     });
-
-    // guard clauses
     test(`growUp should throw error: "${ERROR_MESSAGE}"`, () => {
         fido.age = 30;
         expect(fido.isAlive).toBe(false);
@@ -107,8 +99,6 @@ describe('walk', () => {
         bronson.walk();
         expect(bronson.fitness).toBe(6);
     });
-
-    // guard clauses
     test(`walk should throw error: "${ERROR_MESSAGE}"`, () => {
         fido.age = 30;
         expect(fido.isAlive).toBe(false);
@@ -125,15 +115,13 @@ describe('feed', () => {
         expect(fido.hunger).toBe(0);
     });
     test('feed decreases the hunger property by 3', () => {
-        bronson.growUp();
+        bronson.hunger = 5;
         bronson.feed();
         expect(bronson.hunger).toBe(2);
-        bronson.growUp();
+        bronson.hunger = 7;
         bronson.feed();
         expect(bronson.hunger).toBe(4);
     });
-
-    // guard clauses
     test(`feed should throw error: "${ERROR_MESSAGE}"`, () => {
         fido.age = 30;
         expect(fido.isAlive).toBe(false);
@@ -189,7 +177,6 @@ describe('BabyPet', () => {
         fido.haveBaby('Fido Jr');
         fido.haveBaby('Odif');
     });
-
     test('Returns an instance of BabyPet', () => {
         expect(fido.children[0]).toBeInstanceOf(BabyPet);
         expect(fido.children[1]).toBeInstanceOf(BabyPet);
@@ -207,7 +194,6 @@ describe('findParent', () => {
         bronson.haveBaby('Bronson Jr');
         bronson.haveBaby('Nosnorb');
     });
-
     test('BabyPet can find its parent', () => {
         expect(fido.children[0].findParent()).toEqual('My parent is Fido!');
         expect(fido.children[1].findParent()).toEqual('My parent is Fido!');

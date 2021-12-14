@@ -33,12 +33,12 @@ Pet.prototype.growUp = function () {
 
 Pet.prototype.walk = function () {
     if (!this.isAlive) throw new Error(ERROR_MESSAGE);
-    this.fitness + 4 > MAXIMUM_FITNESS ? this.fitness = 10 : this.fitness += 4;
+    this.fitness = Math.min(MAXIMUM_FITNESS, this.fitness + 4);
 }
 
 Pet.prototype.feed = function () {
     if (!this.isAlive) throw new Error(ERROR_MESSAGE);
-    this.hunger - 3 < MINIMUM_HUNGER ? this.hunger = 0 : this.hunger -= 3;
+    this.hunger = Math.max(MINIMUM_HUNGER, this.hunger - 3);
 }
 
 Pet.prototype.checkUp = function () {
@@ -68,7 +68,6 @@ BabyPet.prototype.findParent = function () {
     return `My parent is ${this.parent.name}!`;
 }
 
-// export Pet/BabyPet constructors for outside usage
 module.exports = {
     Pet,
     BabyPet
