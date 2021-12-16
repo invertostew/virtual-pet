@@ -46,6 +46,8 @@ Each function was first written as a failing test, which was then built out as p
 
 All tests are located inside of the `__tests__` directory, and if you wish to run them, you can install Jest by running `npm install`. From there, you can run `npm test` to run the tests.
 
+![Passing Tests!](./__tests__/readme-screenshots/virtual-pet-passing-tests.png)
+
 ## Future Plans
 * ~~Refactor to allow for `MIN_HUNGER`, `MAX_HUNGER` etc. to make code more readable.~~
 * ~~Allow pets to have babies!~~
