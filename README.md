@@ -30,7 +30,7 @@ Currently none.
 1. Open up your terminal and clone the repository onto your local machine using `git clone`, or fork it if you wish and then run `git clone`.
 2. Navigate into the directory that you cloned the repository into (`cd virtual-pet` if you didn't specify a directory).
 3. Enter the Node REPL via the `node` command.
-4. Import the required modules like so: `const Pet = require('./src/virtual-pet.js')`.
+4. Import the required modules like so: `const { Pet, BabyPet} = require('./src/virtual-pet.js')`.
 5. Create your pet! e.g. `const fido = new Pet('Fido');`.
 6. Once you have created your pet, you have access to several methods:
     * `growUp()`
