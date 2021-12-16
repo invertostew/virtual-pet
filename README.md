@@ -51,7 +51,7 @@ All tests are located inside of the `__tests__` directory, and if you wish to ru
 ## Future Plans
 * ~~Refactor to allow for `MIN_HUNGER`, `MAX_HUNGER` etc. to make code more readable.~~
 * ~~Allow pets to have babies!~~
-* Convert to ES6 Class Syntax.
+* ~~Convert to ES6 Class Syntax.~~
 
 ## License
 This project is licensed under the [MIT license](https://opensource.org/licenses/MIT).
