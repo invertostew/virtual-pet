@@ -2,6 +2,9 @@
     This is my original virtual pet project
     built with Constructor Functions, and 
     later converted to ES6 Class Syntax.
+    
+    This is just for comparing between the
+    two different syntax.
 */
 'use strict';
 
