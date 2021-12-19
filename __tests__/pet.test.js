@@ -1,10 +1,13 @@
+'use strict';
+
 const {
     Pet,
     BabyPet
-} = require('../src/virtual-pet.js');
+} = require('../src/pet.js');
 
 const ERROR_MESSAGE = 'Your pet is no longer alive :(';
 
+let fido, bronson;
 beforeEach(() => {
     fido = new Pet('Fido');
     bronson = new Pet('Bronson');
