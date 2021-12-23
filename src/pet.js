@@ -1,6 +1,6 @@
 'use strict';
 
-const app = {
+const settings = {
     minimumAge: 0,
     maximumAge: 30,
     minimumHunger: 0,
@@ -15,38 +15,56 @@ const app = {
 class Pet {
     constructor(name) {
         this.name = name;
-        this.age = app.minimumAge;
-        this.hunger = app.minimumHunger;
-        this.fitness = app.maximumFitness;
+        this.age = settings.minimumAge;
+        this.hunger = settings.minimumHunger;
+        this.fitness = settings.maximumFitness;
         this.children = [];
     }
 
     get isAlive() {
-        return this.age < app.maximumAge && this.hunger < app.maximumHunger && this.fitness > app.minimumFitness;
+        return this.age < settings.maximumAge
+        && this.hunger < settings.maximumHunger
+        && this.fitness > settings.minimumFitness;
     }
 
     growUp() {
-        if (!this.isAlive) throw new Error(app.errorMessage);
+        if (!this.isAlive) throw new Error(settings.errorMessage);
+        
         this.age += 1;
         this.hunger += 5;
         this.fitness -= 3;
     }
 
     walk() {
-        if (!this.isAlive) throw new Error(app.errorMessage);
-        this.fitness = Math.min(app.maximumFitness, this.fitness + 4);
+        if (!this.isAlive) throw new Error(settings.errorMessage);
+
+        this.fitness = Math.min(settings.maximumFitness, this.fitness + 4);
     }
 
     feed() {
-        if (!this.isAlive) throw new Error(app.errorMessage);
-        this.hunger = Math.max(app.minimumHunger, this.hunger - 3);
+        if (!this.isAlive) throw new Error(settings.errorMessage);
+
+        this.hunger = Math.max(settings.minimumHunger, this.hunger - 3);
     }
 
     checkUp() {
-        if (!this.isAlive) return app.errorMessage;
-        else if (this.hunger >= app.hungerThreshold && this.fitness <= app.fitnessThreshold) return 'I am hungry AND I need a walk';
-        else if (this.fitness <= app.fitnessThreshold) return 'I need a walk';
-        else if (this.hunger >= app.hungerThreshold) return 'I am hungry';
+        if (!this.isAlive) return settings.errorMessage;
+
+        if (
+            this.hunger >= settings.hungerThreshold
+            && this.fitness <= settings.fitnessThreshold
+        ) {
+            return 'I am hungry AND I need a walk';
+        }
+
+        if (this.fitness <= settings.fitnessThreshold) {
+            return 'I need a walk';
+        }
+
+        if (this.hunger >= settings.hungerThreshold) {
+            return 'I am hungry';
+        }
+
         return 'I feel great!';
     }
 

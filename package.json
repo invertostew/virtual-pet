@@ -2,13 +2,19 @@
   "name": "virtual-pet",
   "version": "1.0.0",
   "description": "Programming Fundamentals - OOP Virtual Pet",
-  "main": "src/index.js",
+  "main": "src/pet.js",
   "scripts": {
     "test": "jest"
   },
   "author": "Stuart Green",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
-    "jest": "^27.4.4"
+    "eslint": "^8.5.0",
+    "eslint-config-airbnb": "^19.0.2",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.4.4",
+    "prettier": "^2.5.1"
   }
 }
